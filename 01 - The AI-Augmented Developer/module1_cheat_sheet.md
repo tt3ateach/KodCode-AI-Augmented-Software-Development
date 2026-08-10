@@ -170,17 +170,3 @@ Course phrase:
 > The more the assistant can do, the more permissions and review matter.
 
 ---
-
-## Do not skip when teaching
-
-- The interaction spectrum
-- The five-question decision model
-- Plausible incompleteness
-- Privacy/IP/security guardrails
-- Human ownership of review, verification, and merge
-
-## Safe to skim when short on time
-
-- Vendor-by-vendor ecosystem detail
-- MCP mechanics beyond the teaser
-- Deep comparisons between similar agent products
