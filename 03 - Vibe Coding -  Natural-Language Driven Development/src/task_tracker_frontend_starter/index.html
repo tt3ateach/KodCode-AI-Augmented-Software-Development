@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker Frontend</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">M3</div>
+          <div>
+            <div class="brand-title">Task Tracker</div>
+            <div class="brand-subtitle">Vibe coding with ownership</div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h2>Workflow</h2>
+          <ol>
+            <li>Explore product intent</li>
+            <li>Contain the first slice</li>
+            <li>Generate and verify</li>
+            <li>Own and integrate</li>
+          </ol>
+        </div>
+        <div class="sidebar-card">
+          <h2>API mode</h2>
+          <p>Optional end-to-end bridge to the Module 2 Work Items API.</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">AI-Augmented Software Development</p>
+            <h1>Task Tracker</h1>
+            <p class="hero-copy">Generate the first draft quickly. Then review, test, and own it.</p>
+          </div>
+          <div class="hero-stats" id="summary"></div>
+        </header>
+
+        <section class="controls" aria-label="task controls">
+          <form id="quick-add-form" class="quick-add-form">
+            <input id="task-title-input" type="text" name="title" placeholder="Quick add a task…" aria-label="Task title" />
+            <select id="task-priority-input" name="priority" aria-label="Task priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+            <button type="submit">Add task</button>
+          </form>
+
+          <div class="filters">
+            <div class="filter-group" role="group" aria-label="status filters">
+              <button type="button" data-status="all" class="filter-chip is-active">All</button>
+              <button type="button" data-status="todo" class="filter-chip">Todo</button>
+              <button type="button" data-status="in-progress" class="filter-chip">In progress</button>
+              <button type="button" data-status="done" class="filter-chip">Done</button>
+            </div>
+            <label class="search-label">
+              <span>Search <em>(optional stretch)</em></span>
+              <input id="search-input" type="search" placeholder="Search tasks" />
+            </label>
+          </div>
+        </section>
+
+        <section class="api-panel" aria-label="API connection">
+          <label>
+            Module 2 API URL
+            <input id="api-url-input" type="url" placeholder="http://127.0.0.1:8000" />
+          </label>
+          <button id="connect-api-button" type="button">Connect API</button>
+          <button id="use-local-button" type="button">Use local mode</button>
+          <span id="mode-label" class="mode-label">Local mode</span>
+        </section>
+
+        <section class="feedback-row">
+          <div id="flash-message" class="flash-message" aria-live="polite"></div>
+        </section>
+
+        <section id="task-list-region" class="task-region" aria-labelledby="task-list-title">
+          <div class="section-header">
+            <h2 id="task-list-title">Tasks</h2>
+            <p class="section-subtitle">First drafts are fast. Ownership starts with reading the code.</p>
+          </div>
+          <div id="task-list" class="task-list"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
