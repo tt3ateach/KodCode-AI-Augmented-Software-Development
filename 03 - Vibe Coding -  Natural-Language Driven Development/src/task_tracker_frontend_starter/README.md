@@ -1,34 +1,55 @@
-# Task Tracker Frontend — Starter
+# Task Tracker Frontend — Minimal Starter
 
-This starter repo supports Module 3: vibe coding and natural-language-driven development.
+This starter supports Module 3: vibe coding and natural-language-driven development.
 
-The app shell is present, but the core behavior is intentionally incomplete. Your task is to use AI to create a first draft, then review, test, and own it.
+It is intentionally **under-designed**. The product intent, constraints, and sample data are present, but the application architecture and implementation are not.
 
-## Run
+That is deliberate: the coding agent should first help propose the product slice and file responsibilities rather than merely fill predefined TODOs.
+
+## Start here
+
+1. Read `docs/design-brief.md`.
+2. Run the starter test:
 
 ```bash
 npm install
 npm test
+```
+
+3. Serve the current shell:
+
+```bash
 npm run serve
 ```
 
+4. Use the Module 3 prompt progression:
+   - explore product intent;
+   - contain the first slice;
+   - generate the first draft;
+   - verify and review;
+   - take ownership;
+   - then integrate the Module 2 API.
+
 ## Expected starting state
 
-Some tests fail. That is intentional. The tests describe required behavior for the core slice and API client.
+- `npm test` passes a small sanity check for the supplied sample data.
+- The browser shows only a minimal shell.
+- There is **no predefined application architecture** to complete.
+- The coding agent is expected to propose and create the implementation files after the plan is reviewed.
 
-## Required core behavior
+## Phase 1 target behavior
 
-- render tasks;
+The first local-only slice should eventually support:
+
+- rendering tasks;
 - quick-add;
 - one status filter;
-- toggle done;
+- toggling completion;
 - local persistence;
-- minimal API integration with the Module 2 API.
+- an empty state.
 
-## Workflow
+Search, priority editing, visual polish, and richer controls are optional stretch work.
 
-1. Explore product intent.
-2. Contain the smallest slice.
-3. Generate the first draft.
-4. Verify and inspect.
-5. Own and integrate.
+## Phase 2
+
+After the first draft is working and reviewed, connect the core flow to the Module 2 Work Items API while keeping local mode available as fallback.

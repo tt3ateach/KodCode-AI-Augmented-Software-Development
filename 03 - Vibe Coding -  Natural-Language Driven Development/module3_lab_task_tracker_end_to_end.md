@@ -46,8 +46,8 @@ Clearly optional. Use only if the cohort is moving quickly.
 
 - no build tooling;
 - no new runtime dependencies;
-- preserve the existing module structure;
-- use tests for pure logic and API client behavior;
+- let the coding agent propose a small implementation structure after the product-intent step;
+- use automated tests for pure logic in Phase 1; add API-client tests when the API integration is introduced in Phase 2;
 - use manual browser checks for DOM behavior;
 - do not use unsafe `innerHTML` for user-provided task titles;
 - stop after the agreed first slice.
@@ -57,8 +57,8 @@ Clearly optional. Use only if the cohort is moving quickly.
 1. Read `docs/design-brief.md`.
 2. Ask AI for two first-version experiences.
 3. Choose the safer/smaller option.
-4. Ask for a file-responsibility map.
-5. Implement the first slice.
+4. Ask for a file-responsibility map and review it before any application files are created.
+5. Implement the first slice using the approved structure.
 6. Run tests.
 7. Open the app in the browser.
 8. Inspect the diff.
@@ -140,7 +140,9 @@ No authentication. No multi-user sync. No deployment.
 
 A full reference solution is included in `task_tracker_frontend_solution/`.
 
-Expected solution structure:
+**Important:** this is one reasonable *owned* architecture, not the structure students are expected to predict during Phase 1. The starter intentionally does not contain these files. A student's first draft may use different filenames or fewer modules if responsibilities remain clear and the result is reviewable. During Phase 2, students may refactor toward cleaner boundaries as needed.
+
+Reference solution structure:
 
 - `src/state.js` — pure task normalization, filtering, updating, status/priority translation.
 - `src/localService.js` — localStorage-backed service with safe parsing and persistence.

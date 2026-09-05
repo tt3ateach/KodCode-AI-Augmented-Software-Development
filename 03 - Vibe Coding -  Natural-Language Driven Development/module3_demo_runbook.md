@@ -34,9 +34,10 @@ npm run serve
 
 Expected starting state:
 
-- some support tests pass;
-- core acceptance tests fail because the starter is incomplete;
-- the browser shows the shell but not the complete behavior.
+- the starter contains only the product brief, minimal browser shell, sample data, and a sanity test;
+- `npm test` passes the starter sanity check;
+- the browser shows only a placeholder shell;
+- there is no predefined application module structure to complete.
 
 Optional:
 
@@ -99,12 +100,16 @@ Do not edit files yet.
 
 Expected plan:
 
-- `src/state.js` for pure logic;
-- `src/localService.js` or `src/service.js` for local persistence;
-- `src/render.js` for DOM rendering;
-- `src/app.js` for event wiring;
-- tests for pure state logic;
+The agent should propose a **small architecture of its own**, rather than discovering a pre-created set of TODO files. A reasonable answer might separate:
+
+- pure task/state logic;
+- persistence;
+- DOM rendering;
+- event/bootstrap wiring;
+- automated tests for pure logic;
 - manual browser checks for UI behavior.
+
+Do not require specific filenames. If the agent proposes a simpler structure that keeps responsibilities understandable and the diff reviewable, accept it.
 
 Reject if the AI suggests:
 
@@ -119,23 +124,24 @@ Reject if the AI suggests:
 Prompt:
 
 ```text
-Implement only the agreed first slice.
+Implement only the agreed first slice using the file/responsibility plan we just approved.
 Constraints:
 - no build tools
 - no new runtime dependencies
-- preserve the existing file structure
+- create only the files needed for the approved slice
+- do not copy or assume a reference-solution architecture
 - do not use unsafe innerHTML for task titles
-- tests only for pure logic
-- manual browser checks for DOM behavior
+- add automated tests where they add clear value, especially for pure logic
+- use manual browser checks for DOM behavior
 Stop after render, quick-add, one status filter, completion toggle, local persistence, and empty state.
 After editing, summarize changed files and tell me exactly what to verify.
 ```
 
 Expected file changes:
 
-- state/service/render/app files updated;
-- tests added or updated;
-- no package dependency changes except maybe scripts.
+- only the small set of application/test files approved in Step 2 are created or changed;
+- `package.json` should not gain runtime dependencies;
+- the exact filenames may vary because choosing the first-draft structure is part of the exercise.
 
 Verification:
 
@@ -175,13 +181,16 @@ Identify:
 Do not edit yet.
 ```
 
-Expected findings:
+Expected findings will vary with the generated first draft. Typical examples include:
 
 - missing localStorage corruption handling;
-- too much logic in app/bootstrap;
-- insufficient API/client tests;
+- too much logic in one file;
+- weak or missing automated tests;
 - incomplete accessibility/focus handling;
-- hidden assumptions about task ID format.
+- unsafe DOM rendering;
+- hidden assumptions about task IDs or status values.
+
+Do not force the draft to match the reference solution just to make these findings appear.
 
 If AI says everything is production-ready, challenge it:
 
