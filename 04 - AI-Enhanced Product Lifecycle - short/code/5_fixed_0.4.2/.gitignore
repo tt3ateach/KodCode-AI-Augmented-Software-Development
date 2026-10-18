@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.db
+*.db-*
+*.log
+.ipynb_checkpoints/
+.ruff_cache/

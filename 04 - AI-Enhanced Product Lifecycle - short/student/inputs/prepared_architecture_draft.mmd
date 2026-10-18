@@ -1,0 +1,9 @@
+%% Prepared AI draft for Task B. Use it if your own draft gives you nothing to correct.
+%% Prompt used: "Draw how a due-date feature fits into this application."
+flowchart TD
+  B["Task Tracker browser"] --> A["Work Items API"]
+  A --> M["Models"]
+  A --> R["SQLite repository<br/>work_items table + overdue column"]
+  A --> S["Reminder scheduler"]
+  B --> P["Overdue rule<br/>uses the browser's clock"]
+  R --> B

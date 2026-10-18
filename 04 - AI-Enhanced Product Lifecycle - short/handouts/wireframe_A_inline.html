@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe A · inline controls</title>
+<style>
+  :root { --ink: #172033; --muted: #667085; --line: #c9d3e0; --soft: #f3f6fa; --late: #b42318; }
+  body { font: 16px/1.4 system-ui, "Segoe UI", Arial, sans-serif; color: var(--ink); background: #fff; max-width: 980px; margin: 32px auto; padding: 0 16px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .note { color: var(--muted); margin: 0 0 20px; }
+  .box { border: 1.5px dashed var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .field { display: grid; gap: 4px; color: var(--muted); font-size: 14px; }
+  .input { border: 1.5px solid var(--line); border-radius: 6px; padding: 8px 10px; min-width: 150px; color: var(--ink); background: #fff; font-size: 16px; }
+  .wide { min-width: 300px; }
+  .btn { border: 1.5px solid var(--ink); border-radius: 6px; padding: 8px 14px; font-weight: 600; background: #fff; }
+  .btn.primary { background: var(--ink); color: #fff; }
+  .chk { width: 18px; height: 18px; border: 1.5px solid var(--ink); border-radius: 3px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .task { display: grid; grid-template-columns: 24px 1fr auto; gap: 12px; align-items: center; }
+  .title { font-weight: 700; }
+  .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .label { min-width: 150px; text-align: right; }
+  .late { color: var(--late); font-weight: 700; }
+</style>
+</head>
+<body>
+  <h1>Wireframe A · inline controls</h1>
+  <p class="note">Every control sits on the task row. Static sketch; reference day 2026-10-04 (UTC).</p>
+
+  <div class="box row">
+    <div class="field">Task title <span class="input wide">Review patch</span></div>
+    <div class="field">Due date <span class="input">2026-10-03</span></div>
+    <div class="field">&nbsp;<span class="btn primary">Add task</span></div>
+  </div>
+
+  <div class="box row"><span><span class="chk"></span>Overdue only</span><span>Status: All · To do · In progress · Done</span></div>
+
+  <div class="box task">
+    <span class="chk"></span>
+    <div><div class="title">Review patch</div>
+      <div class="controls"><span class="input">2026-10-03</span><span class="btn">Clear date</span></div></div>
+    <span class="label late">Overdue</span>
+  </div>
+  <div class="box task">
+    <span class="chk"></span>
+    <div><div class="title">Fix typo</div>
+      <div class="controls"><span class="input">2026-10-04</span><span class="btn">Clear date</span></div></div>
+    <span class="label">Due 2026-10-04</span>
+  </div>
+  <div class="box task">
+    <span class="chk">✓</span>
+    <div><div class="title">Write release note</div>
+      <div class="controls"><span class="input">2026-10-03</span><span class="btn">Clear date</span></div></div>
+    <span class="label">Done</span>
+  </div>
+  <div class="box task">
+    <span class="chk"></span>
+    <div><div class="title">Explore idea</div>
+      <div class="controls"><span class="input">dd/mm/yyyy</span></div></div>
+    <span class="label">No due date</span>
+  </div>
+</body>
+</html>

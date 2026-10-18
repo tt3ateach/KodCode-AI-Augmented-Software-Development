@@ -1,0 +1,9 @@
+{"time_utc": "2026-10-03T21:22:00Z", "path": "/health", "http_status": 200}
+{"time_utc": "2026-10-03T21:23:00Z", "path": "/static/styles.css", "http_status": 200}
+{"time_utc": "2026-10-03T21:24:00Z", "path": "/work-items?status=done", "http_status": 200}
+{"time_utc": "2026-10-03T21:25:00Z", "path": "/work-items/task-42", "method": "GET", "http_status": 200, "task_id": "task-42", "task_status": "todo", "due_date": "2026-10-03", "overdue": true}
+{"time_utc": "2026-10-03T21:26:00Z", "path": "/work-items/missing", "method": "GET", "http_status": 404}
+{"time_utc": "2026-10-03T21:27:00Z", "path": "/work-items?overdue_only=true", "method": "GET", "http_status": 200}
+{"time_utc": "2026-10-03T21:28:00Z", "path": "/health", "http_status": 200}
+{"time_utc": "2026-10-03T21:33:00Z", "path": "/work-items", "method": "POST", "http_status": 201, "task_id": "task-57", "task_status": "todo", "due_date": "2026-10-03", "overdue": true}
+{"time_utc": "2026-10-04T00:05:00Z", "path": "/work-items/task-42", "method": "GET", "http_status": 200, "task_id": "task-42", "task_status": "todo", "due_date": "2026-10-03", "overdue": true}
